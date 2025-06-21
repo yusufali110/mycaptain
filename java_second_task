@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class ArrayOperations {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] numbers = new int[5];
+
+        // Input: Prompt user to enter 5 different numbers
+        System.out.println("Enter 5 different numbers:");
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Number " + (i + 1) + ": ");
+            numbers[i] = scanner.nextInt();
+        }
+
+        // Sort the array using selection sort
+        sortArray(numbers);
+
+        // Output the sorted array
+        System.out.print("\nSorted array: ");
+        for (int num : numbers) {
+            System.out.print(num + " ");
+        }
+
+        // Find second highest and second lowest
+        int secondLowest = numbers[1];
+        int secondHighest = numbers[3];
+
+        System.out.println("\nSecond Lowest: " + secondLowest);
+        System.out.println("Second Highest: " + secondHighest);
+
+        scanner.close();
+    }
+
+    // Selection sort implementation
+    public static void sortArray(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            int minIdx = i;
+            for (int j = i + 1; j <
